@@ -1,8 +1,16 @@
+server:
+  servlet:
+    application-display-name: "Stock Manager API"
+    context-path: "/api/v1"
+
 spring:
   application:
     name: "Stock Manager API"
   jpa:
     open-in-view: "false"
+    hibernate:
+      ddl-auto: "none"
+    show-sql: "true"
     properties:
       javax:
         persistence:
@@ -15,12 +23,9 @@ spring:
         jdbc:
           lob:
             non_contextual_creation: "true"
-        ddl-auto: "none"
+        format_sql: "true"
   datasource:
+    name: "stock-manager-api-ds"
     url: "jdbc:postgresql://localhost:5432/stock-manager-api-db"
     username: "postgres"
     password: "postgres"
-
-server:
-  servlet:
-    context-path: "/api/v1"
