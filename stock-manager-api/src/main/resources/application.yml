@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: "Stock Manager API"
+
+server:
+  port: 8080
+  servlet:
+    context-path: "/api/v1"
