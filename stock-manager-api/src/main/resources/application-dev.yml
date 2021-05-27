@@ -1,6 +1,25 @@
 spring:
   application:
     name: "Stock Manager API"
+  jpa:
+    open-in-view: "false"
+    properties:
+      javax:
+        persistence:
+          schema-generation:
+            # create-source: "metadata"
+          scripts:
+              # action: "create"
+              # create-target: "create-schema.sql"
+      hibernate:
+        jdbc:
+          lob:
+            non_contextual_creation: "true"
+        ddl-auto: "none"
+  datasource:
+    url: "jdbc:postgresql://localhost:5432/stock-manager-api-db"
+    username: "postgres"
+    password: "postgres"
 
 server:
   servlet:
