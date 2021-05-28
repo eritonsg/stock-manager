@@ -1,5 +1,5 @@
 -- Insert tb_stocks
-INSERT INTO tb_stocks (id,registered_at,description,enterprise_name,"name",price,variation) VALUES (nextval('stocks_table_sequence'),nextval('stocks_table_sequence'), '2021-05-21','Stock Brazilian LTDA','Stock Brazilian LTDA','BRLTDA1',154.76,0.78);
+INSERT INTO tb_stocks (id,registered_at,description,enterprise_name,"name",price,variation) VALUES (nextval('stocks_table_sequence'),'2021-05-21','Stock Brazilian LTDA','Stock Brazilian LTDA','BRLTDA1',154.76,0.78);
 INSERT INTO tb_stocks (id,registered_at,description,enterprise_name,"name",price,variation) VALUES (nextval('stocks_table_sequence'),'2021-05-21','Stock Brazilian LTDA','Stock Brazilian LTDA','BRLTDA2',89.34,154.76);
 INSERT INTO tb_stocks (id,registered_at,description,enterprise_name,"name",price,variation) VALUES (nextval('stocks_table_sequence'),'2021-05-22','Stock Brazilian LTDA','Stock Brazilian LTDA','BRLTDA3',154.76,14.76);
 INSERT INTO tb_stocks (id,registered_at,description,enterprise_name,"name",price,variation) VALUES (nextval('stocks_table_sequence'),'2021-05-23','Stock Brazilian LTDA','Stock Brazilian LTDA','BRLTDA4',96.34,0.78);
