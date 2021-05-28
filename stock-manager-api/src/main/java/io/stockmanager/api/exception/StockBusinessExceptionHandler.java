@@ -12,13 +12,13 @@ import java.time.OffsetDateTime;
 public class StockBusinessExceptionHandler extends ResponseEntityExceptionHandler {
 
     @ExceptionHandler(StockBusinessException.class)
-    protected ResponseEntity<ExceptionResponse> handleStockPersistenceSecurity(BusinessException ex) {
-        ExceptionResponse exceptionResponse = ExceptionResponse.builder()
+    protected ResponseEntity<ExceptionProblem> handleStockPersistenceSecurity(BusinessException ex) {
+        ExceptionProblem exceptionProblem = ExceptionProblem.builder()
                 .status(HttpStatus.UNPROCESSABLE_ENTITY.value())
                 .message(ex.getMessage())
                 .timeStamp(OffsetDateTime.now())
                 .build();
-        return ResponseEntity.status(HttpStatus.UNPROCESSABLE_ENTITY).body(exceptionResponse);
+        return ResponseEntity.status(HttpStatus.UNPROCESSABLE_ENTITY).body(exceptionProblem);
     }
 
 }
