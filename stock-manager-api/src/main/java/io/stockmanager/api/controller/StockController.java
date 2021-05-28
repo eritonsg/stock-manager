@@ -28,4 +28,10 @@ public class StockController {
         return ResponseEntity.ok(stockService.findAll());
     }
 
+    @PutMapping(consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<StockDTO> update(@Valid @RequestBody StockDTO stockDTO) {
+        StockDTO currentStockDTO = stockService.update(stockDTO);
+        return ResponseEntity.ok(currentStockDTO);
+    }
+
 }
