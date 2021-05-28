@@ -25,15 +25,21 @@ public class StockController {
         return ResponseEntity.ok(persistedStockDTO);
     }
 
-    @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<List<StockDTO>> findAll() {
-        return ResponseEntity.ok(stockService.findAll());
-    }
-
     @PutMapping(consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<StockDTO> update(@Valid @RequestBody StockDTO stockDTO) {
         StockDTO currentStockDTO = stockService.update(stockDTO);
         return ResponseEntity.ok(currentStockDTO);
+    }
+
+    @DeleteMapping(value = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<StockDTO> deleteById(@PathVariable Long id) {
+        StockDTO stockDTORemoved = stockService.deleteById(id);
+        return ResponseEntity.ok(stockDTORemoved);
+    }
+
+    @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<List<StockDTO>> findAll() {
+        return ResponseEntity.ok(stockService.findAll());
     }
 
     @GetMapping(value = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE)

@@ -58,4 +58,11 @@ public class StockService {
         return stockRepository.findById(id).map(stockMapper::toDTO).orElseThrow(EntityNotFoundException::new);
     }
 
+    @Transactional
+    public StockDTO deleteById(Long id) {
+        StockDTO stockDTO = this.findById(id);
+        stockRepository.deleteById(stockDTO.getId());
+        return stockDTO;
+    }
+
 }
