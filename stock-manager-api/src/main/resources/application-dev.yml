@@ -8,6 +8,7 @@ spring:
     name: "Stock Manager API"
   jpa:
     open-in-view: "false"
+    generate-ddl: "false"
     hibernate:
       ddl-auto: "none"
     show-sql: "true"
@@ -16,9 +17,9 @@ spring:
         persistence:
           schema-generation:
             # create-source: "metadata"
-          scripts:
-              # action: "create"
-              # create-target: "create-schema.sql"
+            scripts:
+                # action: "create"
+                # create-target: "create-schema.sql"
       hibernate:
         jdbc:
           lob:

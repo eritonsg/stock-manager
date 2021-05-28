@@ -2,4 +2,4 @@ spring:
   application:
     name: "Stock Manager API"
   profiles:
-    active: "dev"
+    active: ${APP_PROFILE:test}

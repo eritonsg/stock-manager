@@ -1,8 +1,13 @@
 spring:
   application:
     name: "Stock Manager API"
+    jpa:
+      open-in-view: "false"
+      hibernate:
+        ddl-auto: "create"
+  datasource:
+    url: ${DATABASE_URL:test}
 
 server:
   servlet:
     context-path: "/api/v1"
-
