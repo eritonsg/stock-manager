@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
@@ -40,10 +41,18 @@ public class StockService {
         return stockMapper.toDTO(stockRepository.findAll());
     }
 
+    @Transactional(readOnly = true)
+    public List<StockDTO> findAllByToday() {
+       return stockRepository.findAllByToday(LocalDate.now())
+               .map(stockMapper::toDTO)
+               .orElseThrow(EntityNotFoundException::new);
+    }
+
     @Transactional
     public StockDTO update(StockDTO stockDTO) {
 
-        Optional<Stock> stockFounded = stockRepository.findByNameAndDateToUpdate(stockDTO.getName(), stockDTO.getDate(), stockDTO.getId());
+        Optional<Stock> stockFounded = stockRepository.findByNameAndDateToUpdate(stockDTO.getName(),
+                stockDTO.getDate(), stockDTO.getId());
         if (stockFounded.isPresent()) {
             throw new StockBusinessException(MessagesUtil.STOCK_ALREADY_EXISTS);
         }
