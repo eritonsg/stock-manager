@@ -8,6 +8,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 @RestController
@@ -32,6 +34,12 @@ public class StockController {
     public ResponseEntity<StockDTO> update(@Valid @RequestBody StockDTO stockDTO) {
         StockDTO currentStockDTO = stockService.update(stockDTO);
         return ResponseEntity.ok(currentStockDTO);
+    }
+
+    @GetMapping(value = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<StockDTO> findById(@PathVariable Long id) {
+        StockDTO stockDTOFounded = stockService.findById(id);
+        return ResponseEntity.ok(stockDTOFounded);
     }
 
 }

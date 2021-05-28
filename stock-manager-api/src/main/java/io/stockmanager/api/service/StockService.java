@@ -1,6 +1,7 @@
 package io.stockmanager.api.service;
 
 import io.stockmanager.api.dto.StockDTO;
+import io.stockmanager.api.exception.EntityNotFoundException;
 import io.stockmanager.api.exception.StockBusinessException;
 import io.stockmanager.api.mapper.StockMapper;
 import io.stockmanager.api.model.Stock;
@@ -51,4 +52,10 @@ public class StockService {
         return stockMapper.toDTO(stock);
 
     }
+
+    @Transactional(readOnly = true)
+    public StockDTO findById(Long id) {
+        return stockRepository.findById(id).map(stockMapper::toDTO).orElseThrow(EntityNotFoundException::new);
+    }
+
 }
