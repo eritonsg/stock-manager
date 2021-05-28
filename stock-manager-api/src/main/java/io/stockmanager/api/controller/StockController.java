@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.validation.Valid;
+
 @RestController
 @RequestMapping("/stocks")
 public class StockController {
@@ -18,7 +20,7 @@ public class StockController {
     private StockService stockService;
 
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<StockDTO> save(@RequestBody StockDTO stockDTO) {
+    public ResponseEntity<StockDTO> save(@Valid @RequestBody StockDTO stockDTO) {
         StockDTO persistedStockDTO = stockService.save(stockDTO);
         return ResponseEntity.ok(persistedStockDTO);
     }
