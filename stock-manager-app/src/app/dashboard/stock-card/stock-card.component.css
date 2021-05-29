@@ -1,6 +1,6 @@
 .stock-card-container {
-  width: 21.375rem;
-  height: 13.8125rem;
+  width: 18.375rem;
+  height: 10.8125rem;
   background-color: var(--secondary-color);
   padding: 1rem;
   margin: 1rem;
@@ -54,7 +54,7 @@
 }
 
 .stock-value-container .value {
-  font-size: 3rem;
+  font-size: 2rem;
   color: var(--text-color);
 }
 
