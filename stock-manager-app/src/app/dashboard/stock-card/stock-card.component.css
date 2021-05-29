@@ -60,7 +60,7 @@
 
 .stock-value-container .variation {
   background-color: var(--positive-variation-color);
-  color: var(--secondary-color);
+  color: var(--text-color);
   padding: 0.25rem 0.5rem;
   border-radius: 4px;
   align-self: flex-end;
@@ -70,4 +70,5 @@
 
 .stock-value-container .negative-variation {
   background-color: var(--negative-variation-color);
+  color: var(--secondary-color);
 }

@@ -18,7 +18,18 @@ export class DashboardPageComponent implements OnInit {
   }
 
   async fetchStocks(): Promise<void> {
-    this.stocks = await this.dashboardService.getStocks();
+    this.stocks = await (await this.dashboardService.getStocks()).sort((a,b) => this.sortByDate(a,b));
+  }
+
+  sortByDate(a:Stock, b:Stock) {
+
+    if (a.date > b.date) {
+      return 1;
+    }
+    if (a.date < b.date) {
+      return -1;
+    }
+    return 0;
   }
 
 }
