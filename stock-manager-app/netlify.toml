@@ -1,0 +1,7 @@
+[build]
+  publish = "dist/stock-manager-app"
+  command = "ng build stock-manager-app --configuration production"
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
