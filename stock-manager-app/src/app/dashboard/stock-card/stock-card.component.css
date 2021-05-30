@@ -1,17 +1,15 @@
 .stock-card-container {
-  width: 18.375rem;
-  height: 10.8125rem;
+  width: 13.375rem;
+  height: 7.8125rem;
   background-color: var(--secondary-color);
   padding: 1rem;
   margin: 1rem;
   border-radius: 4px;
   border-left: solid var(--positive-variation-color) 0.25rem;
-
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-
-  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  box-shadow: 0 1px 3px rgb(0 0 0 / 12%), 0 1px 2px rgb(0 0 0 / 24%);
   transition: all 0.3s cubic-bezier(.25,.8,.25,1);
 }
 
@@ -31,7 +29,7 @@
   align-items: center;
 }
 
-.stock-info-container h2, p {
+.stock-info-container h2, h3, p {
   margin: 0;
 }
 
@@ -50,12 +48,13 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin: auto;
+  margin-top: 1.25rem;
 }
 
 .stock-value-container .value {
-  font-size: 2rem;
+  font-size: 1.5rem;
   color: var(--text-color);
+  align-self: flex-end;
 }
 
 .stock-value-container .variation {
