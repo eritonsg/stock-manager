@@ -1,9 +1,22 @@
 {
   "name": "stock-manager-app",
-  "version": "0.0.0",
+  "version": "1.0.0",
+  "description": "This is an Application to manager stock quotes. It has been created according to modern architectures for contemporaneous web applications.",
+  "keywords": [],
+  "author": "Eriton dos Santos Gomes <dev.eritonsg@gmail.com> (https://github.com/eritonsg)",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/eritonsg/stock-manager/tree/main/stock-manager-app"
+  },
+  "bugs": {
+    "url": "https://github.com/eritonsg/stock-manager/tree/main/stock-manager-app"
+  },
+  "homepage": "https://github.com/eritonsg/stock-manager/tree/main/stock-manager-app",
   "scripts": {
     "ng": "ng",
     "start": "ng serve --o",
+    "build-test": "ng build --configuration production && cd dist/stock-manager-app && lite-server",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
