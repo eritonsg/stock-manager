@@ -33,9 +33,10 @@ This application is a Stock Manager Application whose aims is to manager stock q
 
 ## Run this web app on localhost
 
-Run `ng serve --open` in a command line terminal for a dev server.
-The app will automatically open on your default brownser at `http://localhost:4200/`.
-If you have changed any of the source files, the server apply it automatically and reload the dev server.
+1. Open terminal in the web app folder: `./stock-manager-app/`
+2. Run `ng serve --open` in a command line terminal for a dev server.
+3. The app will automatically open on your default brownser at `http://localhost:4200/`.
+4. If you have changed any of the source files, the server apply it automatically and reload the dev server.
 
 
 
