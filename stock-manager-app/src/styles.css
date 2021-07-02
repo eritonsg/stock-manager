@@ -1,3 +1,5 @@
+@import url('../node_modules/spinkit/spinkit.min.css');
+
 :root {
   --background-color: #EAEAEA;
   --primary-color: #EA1D25;
